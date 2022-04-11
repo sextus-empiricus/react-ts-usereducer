@@ -1,0 +1,33 @@
+.button {
+    margin-top: 10px;
+    height: 60px;
+    width: 200px;
+
+    align-self: center;
+
+    border: none;
+    border-radius: 5px;
+    background-color: #836cee;
+
+    box-shadow: 2px 2px 5px #301e498c;
+
+    font-family: inherit;
+    font-weight: 600;
+
+    transition: background-color 60ms;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgba(131, 108, 238, 0.7);
+}
+
+.button:focus-visible {
+    outline: 1px solid #ec8cff;
+}
+
+@media (max-width: 900px) {
+    .button {
+        width: 100%;
+    }
+}

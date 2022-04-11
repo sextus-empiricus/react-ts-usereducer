@@ -1,6 +1,9 @@
 import React, {SyntheticEvent, useReducer} from 'react';
-import {User} from '../types/interface_User';
-import {userReducer} from '../utlis/reducer_User';
+import {User} from '../../types/interface_User';
+import {userReducer} from '../../utlis/reducer_User';
+import {Input} from '../UI/Input';
+import {Button} from '../UI/Button';
+import styles from './Form.module.css'
 
 interface Props {
     setValidationError: any;
@@ -42,22 +45,24 @@ const Form = ({setValidationError, setUsersList}: Props) => {
         dispatchUser({type: 'CHANGE_AGE', payload: 0});
     };
 
-    return <form>
-        <label>Username:
-            <input type="text"
-                   value={user.name}
-                   onChange={e => dispatchUser({type: 'CHANGE_NAME', payload: e.target.value})}/>
-        </label>
-        <label>Age (years):
-            <input type="number"
-                   value={user.age}
-                   onChange={e => dispatchUser({type: 'CHANGE_AGE', payload: Number(e.target.value)})}/>
-        </label>
+    return <form className={styles.form}>
+        <Input inputType="text"
+               labelTag="Username:"
+               onChangeHandler={dispatchUser}
+               actionType="CHANGE_NAME"
+               value={user.name}/>
 
-        <button type="submit"
-                onClick={submitHandler}>add
-        </button>
+        <Input inputType="number"
+               labelTag="Age (years):"
+               onChangeHandler={dispatchUser}
+               actionType="CHANGE_AGE"
+               value={user.age}/>
+
+        <Button content="add"
+                buttonType="submit"
+                actionHandler={submitHandler}/>
     </form>
 }
+
 
 export {Form};

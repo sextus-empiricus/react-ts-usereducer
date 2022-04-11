@@ -1,10 +1,20 @@
 import React from 'react';
 
-export const Button = () => {
+import styles from './Button.module.css';
+
+interface Props {
+    content: string
+    buttonType: 'button' | 'submit' | 'reset';
+    actionHandler: any;
+}
+
+const Button = ({buttonType, content, actionHandler}: Props) => {
 
     return (
-
-        <div></div>
-
-    );
+        <button className={styles.button}
+            type={buttonType}
+                onClick={actionHandler}
+        >{content}
+        </button>)
 }
+export {Button};

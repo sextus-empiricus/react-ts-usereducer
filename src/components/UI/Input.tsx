@@ -1,20 +1,26 @@
 import React from 'react';
 
+import styles from './Input.module.css';
+
 interface Props {
     labelTag: string;
-    inputType: 'string' | 'number';
-    value: any,
-    onChangeHandler: Function
+    inputType: 'text' | 'number';
+    value: string | number;
+    actionType: string;
+    onChangeHandler: Function;  // <= what's better?
 }
 
-export const Input = (props: Props) => {
+const Input = (props: Props) => {
 
     return (
-        <label>props.labelTag:
-            <input type={props.inputType}
+        <label className={styles.label_}>{props.labelTag}
+            <input className={styles.input_}
+                   type={props.inputType}
                    value={props.value}
-                   onChange={props.onChangeHandler}/>
+                   onChange={e => props.onChangeHandler(({type: props.actionType, payload: e.target.value}))}/>
         </label>
 
     );
 }
+
+export {Input};
