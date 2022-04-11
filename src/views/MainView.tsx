@@ -6,6 +6,7 @@ import {Form} from '../components/Form';
 import {List} from '../components/List/List';
 import {ErrorBox} from '../components/ErrorBox';
 import {validationErrorReducer} from '../utlis/reducer_ValidationError';
+import {Container} from '../components/Container';
 
 export const MainView = () => {
     const [usersList, setUsersList] = useState<User[]>(dummyList);
@@ -15,7 +16,7 @@ export const MainView = () => {
     });
 
     return <>
-        <div>
+        <Container>
             <Box>
                 <Form setUsersList={setUsersList}
                       setValidationError={dispatchValidationError}/>
@@ -31,6 +32,6 @@ export const MainView = () => {
                     setValidationError={dispatchValidationError}
                     validationErrorMessage={validationError.message}/>
             }
-        </div>
+        </Container>
     </>
 }

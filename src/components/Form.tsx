@@ -53,6 +53,7 @@ const Form = ({setValidationError, setUsersList}: Props) => {
                    value={user.age}
                    onChange={e => dispatchUser({type: 'CHANGE_AGE', payload: Number(e.target.value)})}/>
         </label>
+
         <button type="submit"
                 onClick={submitHandler}>add
         </button>
