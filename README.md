@@ -15,3 +15,4 @@ Practising React.js skills:\
 1. What is an exact type of `dispatch` function of useReducer()?
 2. What is an exact type of `setState` of useState()?'
 3. What is a correct type right here?
+4. Is it fine to pass `setState` as props to internal components? 
