@@ -17,3 +17,5 @@ Questions🤷‍♀️:
 2. What is an exact type of `setState` of useState()?'
 3. What is a correct type right here?
 4. Is it fine to pass `setState` as props to internal components? 
+
+DEMO: https://react-ts-usereducer.herokuapp.com/
