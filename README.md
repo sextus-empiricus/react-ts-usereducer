@@ -9,7 +9,7 @@ Practising React.js skills:\
 • using css-modules,\
 • trying to make it responsive
 
-###Questions🤷‍♀️:
+Questions🤷‍♀️:
 \
 [to find a question in the code search according to the key: `README.Q1`, `README.Q2`, etc.]
 
