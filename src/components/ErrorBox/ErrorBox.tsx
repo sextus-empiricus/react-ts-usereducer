@@ -1,20 +1,27 @@
 import React from 'react';
 import styles from './ErrorBox.module.css';
+import {Button} from '../UI/Button';
 
 interface Props {
-    setValidationError: any;
-    validationErrorMessage: string
+    setValidationError: any; //README.Q1
+    validationErrorMessage: string;
 }
 
-export const ErrorBox = (props: Props) => {
+const ErrorBox = ({setValidationError, validationErrorMessage}: Props) => {
 
     return <>
         <div className={styles.shadow}>
-            <div className={styles.box}>
-                <h1>Sorry</h1>
-                <h2>{props.validationErrorMessage}</h2>
-                <button onClick={() => props.setValidationError({type: 'SET_SHOW', payload: false})}>ok</button>
+            <div className={styles.wrapper}>
+                <div className={styles.box}>
+                    <h1 className={styles.title}>🙈</h1>
+                    <p className={styles.info}>{validationErrorMessage}</p>
+                    <Button content="OK"
+                            buttonType="button"
+                            actionHandler={() => setValidationError({type: 'SET_SHOW', payload: false})}/>
+                </div>
             </div>
         </div>
     </>
 }
+
+export {ErrorBox};

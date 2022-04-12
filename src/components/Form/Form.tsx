@@ -3,11 +3,12 @@ import {User} from '../../types/interface_User';
 import {userReducer} from '../../utlis/reducer_User';
 import {Input} from '../UI/Input';
 import {Button} from '../UI/Button';
+
 import styles from './Form.module.css'
 
 interface Props {
-    setValidationError: any;
-    setUsersList: any;
+    setValidationError: any; //README.Q1
+    setUsersList: any; //README.Q2
 }
 
 const Form = ({setValidationError, setUsersList}: Props) => {
@@ -63,6 +64,5 @@ const Form = ({setValidationError, setUsersList}: Props) => {
                 actionHandler={submitHandler}/>
     </form>
 }
-
 
 export {Form};

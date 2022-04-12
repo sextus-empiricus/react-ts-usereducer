@@ -1,9 +1,4 @@
 .container {
-    height: 600px;
-}
-
-@media(max-width: 900px) {
-    .container {
-        height: 95vh;
-    }
+    min-height: 600px;
+    padding: 20px 0;
 }

@@ -4,9 +4,11 @@ import styles from './Container.module.css'
 interface Props {
     children: React.ReactNode;
 }
-const Container = (props: Props) => {
+
+const Container = ({children}: Props) => {
+
     return <div className={styles.container}>
-        {props.children}
+        {children}
     </div>
 }
 

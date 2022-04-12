@@ -1,14 +1,14 @@
 import React, {useReducer, useState} from 'react';
 import {User} from '../types/interface_User';
-import {dummyList} from '../utlis/dummyList';
 import {Box} from '../components/Box/Box';
 import {Form} from '../components/Form/Form';
 import {List} from '../components/List/List';
 import {ErrorBox} from '../components/ErrorBox/ErrorBox';
 import {validationErrorReducer} from '../utlis/reducer_ValidationError';
 import {Container} from '../components/Container';
+import {dummyList} from '../utlis/dummyList';
 
-export const MainView = () => {
+const MainView = () => {
     const [usersList, setUsersList] = useState<User[]>(dummyList);
     const [validationError, dispatchValidationError] = useReducer(validationErrorReducer, {
         show: false,
@@ -35,3 +35,5 @@ export const MainView = () => {
         </Container>
     </>
 }
+
+export {MainView};

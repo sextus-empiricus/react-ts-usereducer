@@ -7,17 +7,17 @@ interface Props {
     inputType: 'text' | 'number';
     value: string | number;
     actionType: string;
-    onChangeHandler: Function;  // <= what's better?
+    onChangeHandler: any;  //README.Q3
 }
 
-const Input = (props: Props) => {
+const Input = ({labelTag, inputType, value, onChangeHandler, actionType}: Props) => {
 
     return (
-        <label className={styles.label_}>{props.labelTag}
+        <label className={styles.label_}>{labelTag}
             <input className={styles.input_}
-                   type={props.inputType}
-                   value={props.value}
-                   onChange={e => props.onChangeHandler(({type: props.actionType, payload: e.target.value}))}/>
+                   type={inputType}
+                   value={value}
+                   onChange={e => onChangeHandler(({type: actionType, payload: e.target.value}))}/>
         </label>
 
     );

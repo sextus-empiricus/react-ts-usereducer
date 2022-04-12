@@ -5,9 +5,13 @@ interface Props {
     children: React.ReactNode;
 }
 
-export const Box = (props: Props) => {
+const Box = ({children}: Props) => {
 
-    return <div className={styles.Box}>
-        {props.children}
-    </div>
+    return (
+        <div className={styles.Box}>
+            {children}
+        </div>
+    )
 }
+
+export {Box};

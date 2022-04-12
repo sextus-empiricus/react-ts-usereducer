@@ -6,7 +6,7 @@ import styles from './List.module.css';
 
 interface Props {
     usersList: User[];
-    setUsersList: Function;
+    setUsersList: any; //README.Q1
 }
 
 const List = ({usersList, setUsersList}: Props) => {
@@ -18,7 +18,7 @@ const List = ({usersList, setUsersList}: Props) => {
             <li className={styles['list-element']}
                 key={generateKey(el.name)}
                 onClick={() => setUsersList((prev: User[]) => [...prev].filter((el, i) => i !== index))}
-            >{el.name} - {el.age}</li>)}
+            >{el.name} - {el.age} years old</li>)}
         </ul>
     </>
 }
